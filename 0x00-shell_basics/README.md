@@ -11,3 +11,4 @@
 11-lists shows files in current,parent and /boot in long formats and includeds hidden files
 12-file_type shows the type of iamafile in the directory /tmp/
 13-symbolic_link creates a soft link to /bin/ls named __ls__
+14-copy_html copies html to parent
