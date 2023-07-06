@@ -8,3 +8,4 @@
 8-firstdelete deletes the file betty
 9-firstdirdeletion deletes the directory my_first_directory that is in the /tmp directory
 10-back moves to the previous dir
+11-lists shows files in current,parent and /boot in long formats and includeds hidden files
