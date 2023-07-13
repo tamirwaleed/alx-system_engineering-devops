@@ -1,2 +1,2 @@
 #!/bin/bash
-export Begin=1 | grep -A$((begin+2))
+paste -d" " - - | cut -d " " -f 1
