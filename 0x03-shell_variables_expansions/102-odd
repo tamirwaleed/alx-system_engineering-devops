@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'NR % 2 ==1'
+export Begin=1 | grep -A$((begin+2))
