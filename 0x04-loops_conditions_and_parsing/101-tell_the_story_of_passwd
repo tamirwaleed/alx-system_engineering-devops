@@ -3,8 +3,8 @@
 
 while IFS=":" read -r usrnm psword uid gid gecos hmdr cmdsl
 do
-	echo "The user $usrnm is part of the $gid gang "\
-	"lives in $hmdr and rides $cmdsl. "\
-	"$uid's place is protected by the passcode $psword, "\
+	echo "The user $usrnm is part of the $gid gang,"\
+	"lives in $hmdr and rides $cmdsl."\
+	"$uid's place is protected by the passcode $psword,"\
 	"more info about the user here: $gecos"
 done < /etc/passwd
