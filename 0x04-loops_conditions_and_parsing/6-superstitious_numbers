@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Using while loop for Best Schools
+# 4,9 and 17 are bad
+
+i=0
+while [ $i -lt 20 ]
+do
+	echo $(( $i + 1 ))
+	case $i in
+		"3") echo "bad luck from China";;
+		"8") echo "bad luck from Japan";;
+		"16") echo "bad luck from Italy";;
+	esac
+	(( i++ ))
+done
