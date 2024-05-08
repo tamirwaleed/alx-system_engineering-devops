@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Prints the current directory contents
+
+
+i=$(ls)
+for name in i; do
+	echo "$i" | cut -d '-' -f 2
+done
