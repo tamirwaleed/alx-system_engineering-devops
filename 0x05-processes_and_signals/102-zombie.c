@@ -26,15 +26,14 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t pid;
-	char i = 0;
+	int i = 0;
 
-	while (i < 0)
+	while (i < 5)
 	{
 		pid = fork();
 		if (pid > 0)
 		{
 			printf("Zombie process created, PID: %d\n", pid);
-			sleep(1);
 			i++;
 		}
 		else
