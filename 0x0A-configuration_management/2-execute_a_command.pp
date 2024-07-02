@@ -1,2 +1,4 @@
-# a manifest that kills kilmenow
+#a manifest that kills kilmenow
 
+exec { 'pkill -f killmenow':
+  path
