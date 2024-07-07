@@ -1,1 +1,1 @@
-A repo describing shell basics
+Different loops, conditions & parsing
