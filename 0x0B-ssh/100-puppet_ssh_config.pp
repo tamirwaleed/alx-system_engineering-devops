@@ -16,3 +16,4 @@ file_line {'Declare identity file':
 	line    => 'IdentityFile ~/.ssh/school',
 	match   => '^IdentityFile',
 	ensure  => 'present',
+}
