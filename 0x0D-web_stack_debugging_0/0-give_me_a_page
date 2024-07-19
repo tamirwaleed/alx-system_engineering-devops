@@ -4,5 +4,5 @@
 sudo apt-get update -y
 sudo apt-get install -y apache2
 sudo /etc/init.d/apache2 start
-sudo echo 'Hello Holberon' > /var/www/html/index.html
+echo 'Hello Holberon' > sudo tee /var/www/html/index.html
 sudo /etc/init.d/apache2 restart
