@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Temporarily become someone else
+su -c whomai $1
