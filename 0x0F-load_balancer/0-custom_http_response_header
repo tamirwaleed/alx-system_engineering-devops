@@ -3,8 +3,10 @@
 
 apt-get update -y
 apt-get install nginx -y
-sed -i "/listen 80 default_server/a add-header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
-sh -c 'echo "Hello World! This is my first web-server!" > /var/www/html/index.html'
+sed -i "/listen 80 default_server/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+sh -c 'echo "Hello World! This is Tamir'\''s web-server!" > /var/www/html/index.html'
+sed -i '/listen 80 default_server/a  error_page 404 /404.html;' /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.linkedin.com/in/tamir-el-waleed/ permanent;' /etc/nginx/sites-available/default
 sudo touch /var/www/html/404.html
 sh -c 'echo "Ceci n'\''est pas une page" > /var/www/html/404.html'
 service nginx restart
