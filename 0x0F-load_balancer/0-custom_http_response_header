@@ -3,7 +3,6 @@
 
 apt-get update -y
 apt-get install nginx -y
-sudo ufw allow 'Nginx HTTP'
 sed -i "/listen 80 default_server/a add-header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sh -c 'echo "Hello World! This is my first web-server!" > /var/www/html/index.html'
 sudo touch /var/www/html/404.html
