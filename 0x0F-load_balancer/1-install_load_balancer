@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on your lb-01 server
+apt-get update -y
+apt-get install haproxy -y
+sudo chown $USER:USER /etc/haproxy/haproxy.cfg
+echo "
+frontend tamircodes
+    bind *:80
+    mode http
+    default_backend tamir_route
+
+backend tamir_route
+    balance roundrobin
+    server 472388-web-01 54.237.1.193:80 check
+    server 472388-web-02 54.237.108.77:80 check" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
