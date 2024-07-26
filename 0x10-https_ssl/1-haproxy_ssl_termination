@@ -39,7 +39,7 @@ defaults
 frontend tamircodes
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.tamircodes.tech/tamircodes.pem
-    mode http
+    http-request redirect scheme https unless { ssl_fc }
     default_backend tamir_route
 
 backend tamir_route
