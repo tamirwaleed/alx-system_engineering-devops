@@ -14,10 +14,10 @@ if __name__ == "__main__":
     user = requests.get(url + "users/{}".format(emp_id)).json()
     todo_param = {"userId": emp_id}
     todo = requests.get(url + "todos", params=todo_param).json()
-    theFile = [["{}".format(emp_id), '{}'.format(user.get("name")), 
+    theFile = [["{}".format(emp_id), '{}'.format(user.get("username")),
                 '{}'.format(x.get("completed")), '{}'.format(x.get("title"))]
-                for x in todo]
+               for x in todo]
     filename = emp_id + ".csv"
-    with open(filename, "w", newline = '') as fd:
-        write_obj = csv.writer(fd)
+    with open(filename, "w", newline='') as fd:
+        write_obj = csv.writer(fd, quoting=csv.QUOTE_ALL)
         write_obj.writerows(theFile)
