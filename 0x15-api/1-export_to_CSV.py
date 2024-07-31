@@ -15,8 +15,9 @@ if __name__ == "__main__":
     todo = requests.get(url + "todos", params=todo_param).json()
     theFile = ""
     for x in todo:
-        theFile += '"{}", "{}", "{}", "{}"\n'.format(emp_id, user.get("name"), 
-                                      x.get("completed"), x.get("title"))
+        theFile += '"{}", "{}", "{}", "{}"\n'.format(emp_id, user.get("name"),
+                                                     x.get("completed"),
+                                                     x.get("title"))
     filename = emp_id + ".csv"
     with open(filename, "w") as fd:
-        fd.write(theFile[:-1]) 
+        fd.write(theFile[:-1])
