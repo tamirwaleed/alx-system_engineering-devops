@@ -17,7 +17,7 @@ if __name__ == "__main__":
         todo = requests.get(url + "todos", params=todo_param).json()
         theFile[use["id"]] = []
         for x in todo:
-            theFile[use["id"]].append({"user": use.get("username"),
+            theFile[use["id"]].append({"username": use.get("username"),
                                        "task": x.get("title"),
                                        "completed": x.get("completed")})
     filename = "todo_all_employees.json"
