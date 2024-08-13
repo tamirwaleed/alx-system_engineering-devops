@@ -11,12 +11,11 @@ def number_of_subscribers(subreddit):
         subreddit name
     Returns:
         no of subs or 0 if failed '''
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {
-        'User-Agent': 'TamirRedditApp/1.0 (by /u/coldshawerma)'}
+    url = "https://www.reddit.com/r/{}/about/.json".format(subreddit)
+    headers = {'User-Agent': 'MyRedditApp/0.0.1'}
     redd = requests.get(url, headers=headers, allow_redirects=False)
     if redd.status_code == 200:
         results = redd.json()
-        return (results.get("data").get("subscribers"))
+        return results.get("data").get("subscribers")
     else:
-        return (0)
+        return 0
