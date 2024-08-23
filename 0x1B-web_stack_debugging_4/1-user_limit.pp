@@ -1,6 +1,11 @@
 # changing the user limits
 
-exec {'change user limits':
-  command => 'echo -e "holberton soft nofile 4096\nholberton hard nofile 8192"' >> /etc/security/limits.conf,
+exec {'change hard user limits':
+  command => 'sed -i "/holberton hard/s/4/50000/"  /etc/security/limits.conf',
+  path    => '/usr/bin/:/bin/',
+}
+
+exec {'change soft user limits':
+  command => 'sed -i "/holberton soft/s/5/50000/"  /etc/security/limits.conf',
   path    => '/usr/bin/:/bin/',
 }
