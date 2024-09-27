@@ -7,16 +7,15 @@ import requests
 
 def top_ten(subreddit):
     """ Returns top 10 hottest posts"""
+    headers = {'User-Agent': 'xica369'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {
-            'User-Agent': 'linux:tamir.alx:v1.0.0 (by /u/coldshawerma)'}
-    params = {'limit': 10}
-    response = requests.get(url, headers=headers, params=params,
-                            allow_redirects=False)
+    parameters = {'limit': 10}
+    response = requests.get(url, headers=headers, allow_redirects=False,
+                            params=parameters)
+
     if response.status_code == 200:
-        results = response.json()
-        for x in results["data"]["children"]:
-            print(x.get("data").get("title"))
+        titles_ = response.json().get('data').get('children')
+        for title_ in titles_:
+            print(title_.get('data').get('title'))
     else:
         print(None)
