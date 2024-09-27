@@ -14,8 +14,7 @@ def number_of_subscribers(subreddit):
     headers = {
             "User-Agent": 'TamirRedditApp/1.0 (by /u/coldshawerma)'}
     response = requests.get(url, headers=headers, allow_redirects=False)
+
     if response.status_code == 200:
-        results = response.json()
-        return (results.get("data").get("subscribers"))
-    else:
-        return (0)
+        return (response.json().get("data").get("subscribers"))
+    return (0)
